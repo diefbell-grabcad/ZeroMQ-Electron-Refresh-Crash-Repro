@@ -8,3 +8,4 @@ DevTools was disconnected from the page.
 Once page is reloaded, DevTools will automatically reconnect.
 ```
 6. Above never goes away :(
+7. Console in devtools window should should that we're at least trying to close the socket!
