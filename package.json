@@ -1,7 +1,6 @@
 {
-  "name": "fluttering-camp-boil-mk9um",
-  "productName": "fluttering-camp-boil-mk9um",
-  "description": "My Electron application description",
+  "name": "zeromq-electron-refresh-crash-repro",
+  "description": "Minimal repo to reproduce a crash when refreshing an Electron app with zeromq",
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
