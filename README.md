@@ -1,3 +1,4 @@
+0. Install and use Node 14.16.0.
 1. Install deps with `yarn install --ignore-scripts` (`script/install.js` in ZeroMQ fails).
 2. Manually rebuild ZeroMQ with `yarn run rebuild:zeromq`.
 3. Manually build Electron with `rm -r node_modules/electron && yarn add --dev electron@12.1.0` (it doesn't build since we're ignoring scripts above).
