@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -19,6 +19,11 @@ function createWindow () {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools({ mode: "detach" });
+  mainWindow.webContents.on("devtools-reload-page", () => {
+    mainWindow.webContents.send("my-channel", "reload");
+  });
+
+  let isReload = false;
 
   mainWindow.webContents.once("render-process-gone", (event, details) => {
     const log = details.reason === "crashed" ? console.error : console.log;
