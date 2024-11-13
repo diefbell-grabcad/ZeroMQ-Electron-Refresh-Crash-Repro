@@ -1,4 +1,4 @@
-import * as zmq from "zeromq/v5-compat"
+const zmq = require("zeromq/v5-compat");
 
 const socket = zmq.createSocket("dealer");
 socket.pause();

@@ -7,12 +7,14 @@
   "version": "1.0.0",
   "author": "Dief.Bell",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "rebuild:zeromq": "electron-rebuild -f -w zeromq"
   },
   "dependencies": {
     "zeromq": "6.1.2"
   },
   "devDependencies": {
+    "@electron/rebuild": "3.7.1",
     "electron": "12.1.0"
   }
 }

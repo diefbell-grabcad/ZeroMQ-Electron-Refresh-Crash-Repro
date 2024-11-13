@@ -9,7 +9,8 @@ function createWindow () {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false,
     }
   })
 
@@ -17,7 +18,12 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools({ mode: "detach" });
+
+  mainWindow.webContents.once("render-process-gone", (event, details) => {
+    const log = details.reason === "crashed" ? console.error : console.log;
+    log(`Render process is gone! Reason: "${details.reason}"`);
+  })
 }
 
 // This method will be called when Electron has finished
